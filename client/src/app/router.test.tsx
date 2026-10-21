@@ -39,8 +39,37 @@ describe('application routes', () => {
       }),
     ).toBeInTheDocument();
     expect(screen.getByRole('navigation', { name: 'Primary navigation' })).toBeInTheDocument();
+    expect(screen.getAllByAltText('EOLAN DiGITAL logo')).toHaveLength(2);
     expect(screen.getByRole('main')).toBeInTheDocument();
     expect(screen.getByRole('contentinfo')).toBeInTheDocument();
+  });
+
+  it('opens and closes the mobile navigation disclosure', async () => {
+    const user = userEvent.setup();
+    renderRoute('/');
+    const menuButton = screen.getByRole('button', { name: 'Open navigation' });
+
+    await user.click(menuButton);
+
+    expect(menuButton).toHaveAttribute('aria-expanded', 'true');
+    expect(menuButton).toHaveAccessibleName('Close navigation');
+
+    await user.keyboard('{Escape}');
+
+    expect(menuButton).toHaveAttribute('aria-expanded', 'false');
+    expect(menuButton).toHaveFocus();
+  });
+
+  it('marks the current route in the primary navigation', () => {
+    renderRoute('/about');
+
+    expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute(
+      'aria-current',
+      'page',
+    );
+    expect(screen.getByRole('link', { name: 'Home' })).not.toHaveAttribute(
+      'aria-current',
+    );
   });
 
   it('renders the project detail placeholder for a slug', () => {
@@ -68,6 +97,7 @@ describe('application routes', () => {
     const user = userEvent.setup();
     renderRoute('/');
 
+    await user.click(screen.getByRole('button', { name: 'Open navigation' }));
     await user.click(screen.getByRole('link', { name: 'About' }));
 
     expect(
@@ -76,5 +106,8 @@ describe('application routes', () => {
     await waitFor(() => {
       expect(document.title).toBe('About | EOLAN DiGITAL');
     });
+    expect(
+      screen.getByRole('button', { name: 'Open navigation' }),
+    ).toHaveAttribute('aria-expanded', 'false');
   });
 });

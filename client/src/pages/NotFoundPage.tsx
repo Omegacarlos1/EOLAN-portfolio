@@ -1,18 +1,27 @@
-import { Link } from 'react-router-dom';
 import { PageMeta } from '../components/shared/PageMeta';
+import { ButtonLink } from '../components/ui/Button';
+import { Card } from '../components/ui/Card';
+import { Container } from '../components/ui/Container';
+import { SectionHeading } from '../components/ui/SectionHeading';
 
 export function NotFoundPage() {
   return (
-    <section className="placeholder-page container" aria-labelledby="page-title">
+    <section className="placeholder-page" aria-labelledby="page-title">
       <PageMeta title="Page Not Found" />
-      <p className="eyebrow">404</p>
-      <h1 id="page-title">Page Not Found</h1>
-      <p className="placeholder-page__summary">
-        The page you requested does not exist or may have moved.
-      </p>
-      <Link className="text-link" to="/">
-        Return home
-      </Link>
+      <Container size="narrow">
+        <Card className="placeholder-page__card" tone="accent">
+          <SectionHeading
+            description="The page you requested does not exist or may have moved."
+            eyebrow="404"
+            headingLevel={1}
+            id="page-title"
+            title="Page Not Found"
+          />
+          <div className="placeholder-page__actions">
+            <ButtonLink to="/">Return home</ButtonLink>
+          </div>
+        </Card>
+      </Container>
     </section>
   );
 }
