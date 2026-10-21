@@ -1,6 +1,6 @@
 # EOLAN DiGITAL Portfolio
 
-Multi-page portfolio for Egbedayo Olanrewaju, branded EOLAN DiGITAL. The application now includes the Milestone 1 architecture, Milestone 2 shared brand system, and Milestone 3 main content pages with frontend-only contact validation.
+Multi-page portfolio for Egbedayo Olanrewaju, branded EOLAN DiGITAL. The application includes the shared brand system, main content pages, frontend-only contact validation, and a typed project gallery with truthful case-study placeholders.
 
 ## Technology
 
@@ -56,8 +56,8 @@ Copy `client/.env.example` to `client/.env.local` only when local overrides are 
 | `/skills` | Skill groups and primary portfolio stack disclosure |
 | `/services` | Six approved service areas |
 | `/experience` | Explicit holding state pending verified history |
-| `/projects` | Placeholder until Milestone 4 |
-| `/projects/:slug` | Placeholder until Milestone 4 |
+| `/projects` | Filterable typed project gallery |
+| `/projects/:slug` | Reusable project case-study template |
 | `/contact` | Direct links and locally validated enquiry form |
 | Any unmatched path | 404 page |
 
@@ -71,6 +71,12 @@ The supplied portrait is approved for use, but the chat image preview was not ex
 
 1. Save the original as `client/public/images/egbedayo-olanrewaju.jpg`.
 2. Set `profilePhotoPath` in `client/src/data/portfolio.ts` to `/images/egbedayo-olanrewaju.jpg`.
+
+## Project data
+
+Project content is centralized in `client/src/data/projects.ts`. The current PRD verifies only the names Ahoden Elite Clean, Playrush Gaming Platform and Figma BYC Design. Statuses, roles, problems, solutions, technology stacks, challenges, screenshots and project-specific URLs therefore render as TBD.
+
+Categories are limited to what the supplied names support: Playrush uses “Gaming platform,” Figma BYC uses “Design,” and Ahoden Elite Clean remains “TBD.” External project links render only when their values are valid HTTP(S) URLs.
 
 ## Project structure
 
@@ -95,7 +101,7 @@ The `services/` directory will be added when API integration begins; empty direc
 
 - The official logo is preserved byte-for-byte from the approved PRD's embedded asset. A separate source SVG or transparent PNG has not been supplied.
 - The approved professional photo still needs its original file copied into the repository as described above.
-- Project statuses, screenshots, roles, demo URLs and repository URLs remain TBD.
+- Project statuses, overviews, roles, problems, solutions, stacks, challenges, screenshots, demo URLs and repository URLs remain TBD.
 - The contact form is frontend-only. Express API, email delivery and MariaDB schema are not implemented yet.
 - Employment, education, qualifications and achievements remain unpublished until verified details are supplied.
 - CV, domain and production hosting remain TBD.

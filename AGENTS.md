@@ -123,9 +123,10 @@ At the end of each milestone, report:
 ## Current delivery status
 
 - Milestones 1 and 2 are approved.
-- Milestone 3 is implemented on `feature/M03-main-pages` and awaiting review.
+- Milestones 3 and 4 are implemented; Milestone 4 is on `feature/M04-project-showcase` and awaiting review.
 - The professional portrait is approved, but its original file still needs to be placed in the repository before it can replace the accessible placeholder.
-- Experience history, CV, project evidence and backend delivery remain TBD as described above.
+- Project names are verified, but their status, scope, responsibilities, stack, challenges, screenshots, repositories and demos remain TBD.
+- Experience history, CV and backend delivery remain TBD as described above.
 
 ## Git and GitHub Development Workflow
 
