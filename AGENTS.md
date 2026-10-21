@@ -120,6 +120,13 @@ At the end of each milestone, report:
 - If blocked by missing credentials, images or decisions, provide a safe stub and document what is needed.
 - Update documentation when behavior or configuration changes. Preserve this AGENTS.md as the standing project instructions; revise only when requirements change.
 
+## Current delivery status
+
+- Milestones 1 and 2 are approved.
+- Milestone 3 is implemented on `feature/M03-main-pages` and awaiting review.
+- The professional portrait is approved, but its original file still needs to be placed in the repository before it can replace the accessible placeholder.
+- Experience history, CV, project evidence and backend delivery remain TBD as described above.
+
 ## Git and GitHub Development Workflow
 
 All backend development must follow a milestone-based Git workflow.
