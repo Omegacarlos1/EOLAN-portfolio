@@ -175,3 +175,6 @@ Before performing Git operations, inspect the current branch, working tree and r
 - Route-level components live in `client/src/pages/`, common UI in `client/src/components/`, shared state in `client/src/features/`, and application wiring in `client/src/app/`.
 - Jest with React Testing Library is the frontend test runner. Babel transforms TypeScript and JSX for Jest independently of Vite.
 - XAMPP MariaDB is the confirmed local database for the later backend milestone. Milestone 1 has no backend or database connection.
+- The approved logo is stored unchanged at `client/public/images/eolan-logo.jpeg`, extracted from the branded PRD. Keep its white background intact unless a new official transparent asset is supplied.
+- Shared UI primitives live in `client/src/components/ui/`; the responsive header and footer live in `client/src/components/layout/`.
+- The approved provisional brand colors are blue `#2163EE`, purple `#8030EE`, and teal `#0E958C`; exact logo-derived values remain TBD.
