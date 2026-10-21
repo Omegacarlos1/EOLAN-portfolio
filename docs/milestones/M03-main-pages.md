@@ -1,6 +1,6 @@
 # Milestone 3 — Main pages
 
-**Status:** Complete with one asset handoff pending  
+**Status:** Complete with one asset handoff pending
 **Branch:** `feature/M03-main-pages`
 
 ## Delivered
