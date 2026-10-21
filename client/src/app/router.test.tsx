@@ -17,12 +17,12 @@ function renderRoute(path: string) {
 
 describe('application routes', () => {
   it.each([
-    ['/about', 'About'],
-    ['/skills', 'Skills'],
-    ['/services', 'Services'],
-    ['/experience', 'Experience'],
+    ['/about', 'Turning ideas into practical digital solutions'],
+    ['/skills', 'Technology used with intention'],
+    ['/services', 'Support across the web stack'],
+    ['/experience', 'Verified experience details coming later'],
     ['/projects', 'Projects'],
-    ['/contact', 'Contact'],
+    ['/contact', 'Let’s talk about your next project'],
   ])('renders %s with the correct heading', (path, heading) => {
     renderRoute(path);
 
@@ -101,7 +101,10 @@ describe('application routes', () => {
     await user.click(screen.getByRole('link', { name: 'About' }));
 
     expect(
-      screen.getByRole('heading', { level: 1, name: 'About' }),
+      screen.getByRole('heading', {
+        level: 1,
+        name: 'Turning ideas into practical digital solutions',
+      }),
     ).toBeInTheDocument();
     await waitFor(() => {
       expect(document.title).toBe('About | EOLAN DiGITAL');
