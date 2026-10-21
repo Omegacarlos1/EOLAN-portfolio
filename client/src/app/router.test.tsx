@@ -21,7 +21,7 @@ describe('application routes', () => {
     ['/skills', 'Technology used with intention'],
     ['/services', 'Support across the web stack'],
     ['/experience', 'Verified experience details coming later'],
-    ['/projects', 'Projects'],
+    ['/projects', 'Project showcase'],
     ['/contact', 'Let’s talk about your next project'],
   ])('renders %s with the correct heading', (path, heading) => {
     renderRoute(path);
@@ -72,13 +72,17 @@ describe('application routes', () => {
     );
   });
 
-  it('renders the project detail placeholder for a slug', () => {
+  it('renders a useful missing-project state for an unknown slug', () => {
     renderRoute('/projects/example-project');
 
     expect(
-      screen.getByRole('heading', { level: 1, name: 'Project Case Study' }),
+      screen.getByRole('heading', { level: 1, name: 'Project not found' }),
     ).toBeInTheDocument();
     expect(screen.getByText(/example-project/)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Back to projects' })).toHaveAttribute(
+      'href',
+      '/projects',
+    );
   });
 
   it('renders the usable 404 route', () => {
