@@ -1,6 +1,6 @@
 # EOLAN DiGITAL Portfolio
 
-Foundation for the multi-page portfolio of Egbedayo Olanrewaju, branded EOLAN DiGITAL. The application currently contains the Milestone 1 architecture, route placeholders, shared layout, theme tokens, Redux store, and frontend tooling. Full page content and visual design are intentionally deferred.
+Multi-page portfolio for Egbedayo Olanrewaju, branded EOLAN DiGITAL. The application currently contains the Milestone 1 architecture and Milestone 2 shared brand system. Route content remains intentionally placeholder-only until the page milestones.
 
 ## Technology
 
@@ -8,6 +8,7 @@ Foundation for the multi-page portfolio of Egbedayo Olanrewaju, branded EOLAN Di
 - Redux Toolkit and React Redux
 - React Router
 - Plain mobile-first CSS with shared design tokens
+- Reusable responsive layout, buttons, cards, and section headings
 - ESLint
 - Jest and React Testing Library
 
@@ -81,8 +82,9 @@ The `services/` directory will be added when API integration begins; empty direc
 
 ## Current limitations and TBD items
 
-- The approved logo file and professional photo have not been supplied in the repository.
-- Full page content, responsive navigation behavior and polished brand components belong to later frontend milestones.
+- The official logo is preserved byte-for-byte from the approved PRD's embedded asset. A separate source SVG or transparent PNG has not been supplied.
+- The professional photo has not been supplied.
+- Full page content belongs to later frontend milestones.
 - Project statuses, screenshots, roles, demo URLs and repository URLs remain TBD.
 - The contact form, Express API, email delivery and MariaDB schema are not part of this milestone.
 - CV, domain and production hosting remain TBD.
