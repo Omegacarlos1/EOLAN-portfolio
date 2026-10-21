@@ -167,3 +167,11 @@ At the end of each milestone:
 ### Safety Rules
 
 Before performing Git operations, inspect the current branch, working tree and remote configuration. Preserve unrelated changes. Never automatically delete branches, discard uncommitted work or force-push.
+
+## Confirmed frontend architecture
+
+- The React application lives in `client/`; repository-root npm scripts delegate to that workspace so a future `server/` package can be added without restructuring the frontend.
+- Vite builds the React and TypeScript client. Styling uses mobile-first CSS in `client/src/styles/`, with shared design tokens in `tokens.css`; Tailwind is not configured.
+- Route-level components live in `client/src/pages/`, common UI in `client/src/components/`, shared state in `client/src/features/`, and application wiring in `client/src/app/`.
+- Jest with React Testing Library is the frontend test runner. Babel transforms TypeScript and JSX for Jest independently of Vite.
+- XAMPP MariaDB is the confirmed local database for the later backend milestone. Milestone 1 has no backend or database connection.
