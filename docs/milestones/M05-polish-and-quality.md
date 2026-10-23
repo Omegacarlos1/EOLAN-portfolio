@@ -14,6 +14,7 @@
 - Expanded the 404 with clear Home, Projects and Contact recovery actions.
 - Added an explicit project-filter empty state for future data changes.
 - Added portrait loading, load-failure fallback, decoding and priority behavior; project screenshots now lazy-load with asynchronous decoding.
+- Added the approved 831 × 1038 professional portrait unchanged and wired it to the Home and About pages with intrinsic dimensions.
 - Kept the approved 61,308-byte logo unchanged while adding preload, intrinsic dimensions and header/footer priority hints.
 - Replaced the action gradient with darker brand-adjacent stops. Measured white text contrast is 7.00:1 on blue, 7.63:1 on purple and 5.48:1 on teal.
 - Refined small-screen portrait sizing and service-card flow.
@@ -60,7 +61,7 @@ An intermediate full test run caught an initial mobile-menu route-change timing 
 
 Headless Chrome screenshots were inspected after the production build at:
 
-- 500 × 1000: Home and Contact mobile layouts, menu disclosure, stacking, wrapping and portrait placeholder.
+- 500 × 1000: Home and Contact mobile layouts, menu disclosure, stacking, wrapping and professional portrait crop.
 - 768 × 1024: Projects tablet layout, filters and two-column cards.
 - 1440 × 1000: Home desktop layout, desktop navigation and 404 recovery panel.
 
@@ -77,6 +78,7 @@ Lighthouse was not installed or run, so no Lighthouse performance, accessibility
 ## Changed files
 
 - `client/index.html`
+- `client/public/images/egbedayo-olanrewaju.jpeg`
 - `client/src/app/router.test.tsx`
 - `client/src/components/layout/SiteHeader.tsx`
 - `client/src/components/layout/SiteLayout.tsx`
@@ -107,7 +109,6 @@ Lighthouse was not installed or run, so no Lighthouse performance, accessibility
 
 ## Known limitations and outstanding decisions
 
-- The approved professional portrait still needs its original repository file before the loading behavior can be exercised with the final asset.
 - Project screenshots and project-specific details remain TBD; the page continues to show explicit placeholders.
 - CV, experience history, domain and hosting remain TBD.
 - Contact submission remains frontend-only and truthfully reports that no message was sent.

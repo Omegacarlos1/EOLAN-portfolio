@@ -125,7 +125,7 @@ At the end of each milestone, report:
 - Milestones 1 and 2 are approved.
 - Milestones 3 and 4 are implemented.
 - Milestone 5 is implemented on `feature/M05-polish-and-quality` and awaiting review.
-- The professional portrait is approved, but its original file still needs to be placed in the repository before it can replace the accessible placeholder.
+- The approved professional portrait is stored unchanged at `client/public/images/egbedayo-olanrewaju.jpeg` and is used on the Home and About pages.
 - Project names are verified, but their status, scope, responsibilities, stack, challenges, screenshots, repositories and demos remain TBD.
 - Experience history, CV and backend delivery remain TBD as described above.
 
@@ -185,6 +185,7 @@ Before performing Git operations, inspect the current branch, working tree and r
 - Jest with React Testing Library is the frontend test runner. Babel transforms TypeScript and JSX for Jest independently of Vite.
 - XAMPP MariaDB is the confirmed local database for the later backend milestone. Milestone 1 has no backend or database connection.
 - The approved logo is stored unchanged at `client/public/images/eolan-logo.jpeg`, extracted from the branded PRD. Keep its white background intact unless a new official transparent asset is supplied.
+- The approved professional portrait is stored unchanged at `client/public/images/egbedayo-olanrewaju.jpeg`; preserve the original file and its 831 × 1038 composition.
 - Shared UI primitives live in `client/src/components/ui/`; the responsive header and footer live in `client/src/components/layout/`.
 - The approved provisional brand colors are blue `#2163EE`, purple `#8030EE`, and teal `#0E958C`; exact logo-derived values remain TBD.
 - Route metadata is managed through `client/src/components/shared/PageMeta.tsx`; unavailable routes must remain `noindex, nofollow`.

@@ -22,7 +22,11 @@ describe('main portfolio pages', () => {
     expect(screen.getByRole('heading', { level: 1, name: 'Building Digital Experience' })).toBeInTheDocument();
     expect(screen.getByText('Full-Stack Web Developer')).toBeInTheDocument();
     expect(screen.getByText(/I am a passionate Full Stack Web Developer/)).toBeInTheDocument();
-    expect(screen.getByRole('img', { name: /professional portrait placeholder/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole('img', {
+        name: 'Egbedayo Olanrewaju, Full-Stack Web Developer',
+      }),
+    ).toHaveAttribute('src', '/images/egbedayo-olanrewaju.jpeg');
   });
 
   it('shows the approved biography and a non-clickable CV state', () => {

@@ -32,10 +32,12 @@ export function ProfilePortrait({
           className="profile-portrait__image"
           decoding="async"
           fetchPriority={priority ? 'high' : 'auto'}
+          height="1038"
           loading={priority ? 'eager' : 'lazy'}
           onError={() => setImageResult({ src, state: 'error' })}
           onLoad={() => setImageResult({ src, state: 'loaded' })}
           src={src}
+          width="831"
         />
       </figure>
     );

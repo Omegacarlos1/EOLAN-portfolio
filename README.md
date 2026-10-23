@@ -69,12 +69,9 @@ The contact form validates required name, email and project details fields in th
 
 ## Professional portrait
 
-The supplied portrait is approved for use, but the chat image preview was not exposed to the repository as an original file. The UI therefore keeps an accessible placeholder instead of generating or substituting a likeness. To wire the exact asset:
+The approved professional portrait is stored unchanged at `client/public/images/egbedayo-olanrewaju.jpeg` and appears on the Home and About pages. Its source dimensions are 831 × 1038 and its repository copy matches the supplied file byte-for-byte.
 
-1. Save the original as `client/public/images/egbedayo-olanrewaju.jpg`.
-2. Set `profilePhotoPath` in `client/src/data/portfolio.ts` to `/images/egbedayo-olanrewaju.jpg`.
-
-The portrait component exposes an accessible loading state, uses asynchronous decoding and appropriate eager/lazy loading hints, and falls back to the existing placeholder if the configured image cannot load. The approved logo remains unchanged; its 61 KB source is preloaded for the header, loaded lazily in the footer, and rendered with intrinsic dimensions to reduce layout shift.
+The portrait component exposes an accessible loading state, uses intrinsic dimensions, asynchronous decoding and appropriate eager/lazy loading hints, and falls back to an accessible placeholder if the image cannot load. The approved logo remains unchanged; its 61 KB source is preloaded for the header, loaded lazily in the footer, and rendered with intrinsic dimensions to reduce layout shift.
 
 ## Quality and accessibility
 

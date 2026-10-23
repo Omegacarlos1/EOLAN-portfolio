@@ -2,8 +2,7 @@ import type { ContactLink, Service, SkillGroup } from '../types/portfolio';
 
 export const professionalTitle = 'Full-Stack Web Developer';
 
-// Set this to /images/egbedayo-olanrewaju.jpg after the approved source file is added.
-export const profilePhotoPath: string | undefined = undefined;
+export const profilePhotoPath = '/images/egbedayo-olanrewaju.jpeg';
 
 export const biography = [
   'I am a passionate Full Stack Web Developer focused on building modern, responsive, and user-friendly web applications. I specialize in React, JavaScript, TypeScript, Node.js, Express, MongoDB and MySQL, developing everything from engaging frontend interfaces to secure and scalable backend systems.',
