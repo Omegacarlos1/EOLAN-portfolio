@@ -15,7 +15,11 @@ export function ProjectDetailPage() {
   if (!project) {
     return (
       <>
-        <PageMeta title="Project not found" />
+        <PageMeta
+          description="The requested EOLAN DiGITAL project entry could not be found."
+          noIndex
+          title="Project not found"
+        />
         <PageIntro
           description="No project entry matches this address. It may have moved or may not be published."
           eyebrow="404"
@@ -46,7 +50,10 @@ export function ProjectDetailPage() {
 
   return (
     <>
-      <PageMeta title={project.title} />
+      <PageMeta
+        description={`${project.title} case study. Unconfirmed project details remain marked as TBD.`}
+        title={project.title}
+      />
       <PageIntro
         description="Case-study details are published only when verified. Missing information is clearly marked TBD."
         eyebrow={`${project.category} · Status: ${project.status}`}
@@ -139,7 +146,12 @@ export function ProjectDetailPage() {
               <div className="screenshot-grid">
                 {project.screenshots.map((screenshot) => (
                   <figure className="project-screenshot" key={screenshot.src}>
-                    <img alt={screenshot.alt} src={screenshot.src} />
+                    <img
+                      alt={screenshot.alt}
+                      decoding="async"
+                      loading="lazy"
+                      src={screenshot.src}
+                    />
                     {screenshot.caption ? (
                       <figcaption>{screenshot.caption}</figcaption>
                     ) : null}
@@ -171,6 +183,7 @@ export function ProjectDetailPage() {
                     target="_blank"
                   >
                     View GitHub repository
+                    <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 ) : (
                   <MissingProjectData label="GitHub repository URL" />
@@ -183,6 +196,7 @@ export function ProjectDetailPage() {
                     target="_blank"
                   >
                     View live demo
+                    <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 ) : (
                   <MissingProjectData label="Live demo URL" />

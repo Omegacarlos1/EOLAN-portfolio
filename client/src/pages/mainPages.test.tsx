@@ -83,13 +83,16 @@ describe('main portfolio pages', () => {
       'href',
       'mailto:Egbedayoolanrewaju@gmail.com',
     );
-    expect(screen.getByRole('link', { name: 'Omegacarlos1' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /Omegacarlos1/ })).toHaveAttribute(
       'href',
       'https://github.com/Omegacarlos1',
     );
-    expect(screen.getByRole('link', { name: 'Egbedayo Olanrewaju' })).toHaveAttribute(
+    expect(screen.getByRole('link', { name: /Egbedayo Olanrewaju/ })).toHaveAttribute(
       'href',
       'https://www.linkedin.com/in/egbedayo-olanrewaju-671730243/',
+    );
+    expect(screen.getByRole('link', { name: /Omegacarlos1/ })).toHaveAccessibleName(
+      'Omegacarlos1 (opens in a new tab)',
     );
   });
 });
@@ -105,6 +108,7 @@ describe('contact form', () => {
     expect(screen.getByText('Enter your email address.')).toBeInTheDocument();
     expect(screen.getByText('Tell me a little about your project.')).toBeInTheDocument();
     expect(screen.queryByRole('status')).not.toBeInTheDocument();
+    expect(screen.getByLabelText(/^Name/)).toHaveFocus();
   });
 
   it('validates formats and reports that a valid enquiry was not sent', async () => {
@@ -118,6 +122,10 @@ describe('contact form', () => {
 
     expect(screen.getByText('Enter a valid email address.')).toBeInTheDocument();
     expect(screen.getByText(/Add at least 20 characters/)).toBeInTheDocument();
+    expect(screen.getByLabelText(/^Project details/)).toHaveAttribute(
+      'aria-describedby',
+      'contact-message-hint contact-message-error',
+    );
 
     await user.clear(screen.getByLabelText(/^Email/));
     await user.type(screen.getByLabelText(/^Email/), 'client@example.com');

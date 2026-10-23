@@ -34,6 +34,12 @@ export function ContactForm() {
 
     if (Object.keys(nextErrors).length > 0) {
       setSubmissionUnavailable(false);
+      const firstInvalidField = (['name', 'email', 'message'] as const).find(
+        (field) => nextErrors[field],
+      );
+      if (firstInvalidField) {
+        document.getElementById(`contact-${firstInvalidField}`)?.focus();
+      }
       return;
     }
 
@@ -104,7 +110,11 @@ export function ContactForm() {
       <div className="form-field form-field--full">
         <label htmlFor="contact-message">Project details <span aria-hidden="true">(required)</span></label>
         <textarea
-          aria-describedby={errors.message ? 'contact-message-error' : 'contact-message-hint'}
+          aria-describedby={
+            errors.message
+              ? 'contact-message-hint contact-message-error'
+              : 'contact-message-hint'
+          }
           aria-invalid={Boolean(errors.message)}
           id="contact-message"
           name="message"

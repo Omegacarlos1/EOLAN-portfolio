@@ -18,7 +18,7 @@ export function PlaceholderPage({
 }: PlaceholderPageProps) {
   return (
     <section className="placeholder-page" aria-labelledby="page-title">
-      <PageMeta title={title} />
+      <PageMeta description={description} title={title} />
       <Container size="narrow">
         <Card className="placeholder-page__card" tone="accent">
           <SectionHeading

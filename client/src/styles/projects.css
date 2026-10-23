@@ -41,7 +41,7 @@
 
 .filter-chip[aria-pressed='true'] {
   border-color: transparent;
-  background: var(--gradient-brand);
+  background: var(--gradient-action);
   color: #fff;
 }
 
@@ -55,6 +55,25 @@
   display: grid;
   margin-top: var(--space-6);
   gap: var(--space-6);
+}
+
+.project-gallery__empty {
+  margin-top: var(--space-6);
+  padding: var(--space-8);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  background: var(--gradient-surface), var(--color-surface);
+  text-align: center;
+}
+
+.project-gallery__empty h3,
+.project-gallery__empty p {
+  margin: 0;
+}
+
+.project-gallery__empty p {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
 }
 
 .project-card {
@@ -222,6 +241,11 @@
   padding: var(--space-4);
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+}
+
+.project-screenshot img {
+  width: 100%;
+  height: auto;
 }
 
 .screenshot-placeholder {

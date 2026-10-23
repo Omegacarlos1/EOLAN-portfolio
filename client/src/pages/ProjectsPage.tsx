@@ -12,7 +12,10 @@ export function ProjectsPage() {
 
   return (
     <>
-      <PageMeta title="Projects" />
+      <PageMeta
+        description="Browse the EOLAN DiGITAL project showcase, with unconfirmed details clearly marked as TBD."
+        title="Projects"
+      />
       <PageIntro
         description="A transparent view of selected work. Unconfirmed details remain marked TBD until supporting information is supplied."
         eyebrow="Projects"
@@ -47,11 +50,18 @@ export function ProjectsPage() {
             Showing {visibleProjects.length} {visibleProjects.length === 1 ? 'project' : 'projects'}
             {activeFilter === 'All' ? '.' : ` in ${activeFilter}.`}
           </p>
-          <div className="project-grid">
-            {visibleProjects.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
-          </div>
+          {visibleProjects.length > 0 ? (
+            <div className="project-grid">
+              {visibleProjects.map((project) => (
+                <ProjectCard key={project.slug} project={project} />
+              ))}
+            </div>
+          ) : (
+            <div className="project-gallery__empty" role="status">
+              <h3>No projects in this category yet</h3>
+              <p>Choose another filter to continue browsing the project list.</p>
+            </div>
+          )}
         </Container>
       </section>
     </>

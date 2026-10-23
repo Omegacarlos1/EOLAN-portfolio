@@ -13,6 +13,7 @@ export function BrandLogo({
         <img
           alt="EOLAN DiGITAL logo"
           decoding="async"
+          fetchPriority={priority ? 'high' : 'low'}
           height="1254"
           loading={priority ? 'eager' : 'lazy'}
           src="/images/eolan-logo.jpeg"

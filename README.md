@@ -2,6 +2,8 @@
 
 Multi-page portfolio for Egbedayo Olanrewaju, branded EOLAN DiGITAL. The application includes the shared brand system, main content pages, frontend-only contact validation, and a typed project gallery with truthful case-study placeholders.
 
+Milestone 5 adds per-page metadata, responsive polish, stronger keyboard focus handling, resilient portrait loading/fallback behavior, subtle reduced-motion-aware animation, and an expanded 404 experience.
+
 ## Technology
 
 - React and TypeScript with Vite
@@ -71,6 +73,20 @@ The supplied portrait is approved for use, but the chat image preview was not ex
 
 1. Save the original as `client/public/images/egbedayo-olanrewaju.jpg`.
 2. Set `profilePhotoPath` in `client/src/data/portfolio.ts` to `/images/egbedayo-olanrewaju.jpg`.
+
+The portrait component exposes an accessible loading state, uses asynchronous decoding and appropriate eager/lazy loading hints, and falls back to the existing placeholder if the configured image cannot load. The approved logo remains unchanged; its 61 KB source is preloaded for the header, loaded lazily in the footer, and rendered with intrinsic dimensions to reduce layout shift.
+
+## Quality and accessibility
+
+- Each route sets a specific document title, description and Open Graph title/description. Missing routes use `noindex, nofollow`.
+- Route changes move focus to the main landmark; the skip link remains available for direct keyboard access.
+- The mobile navigation supports disclosure semantics and Escape-to-close behavior.
+- Invalid contact submissions focus the first invalid field and retain the message hint in the accessible description.
+- External links that open a new tab announce that behavior to assistive technology.
+- Motion is subtle and disabled through the existing `prefers-reduced-motion` override.
+- The project gallery, experience page, missing project route, portrait and 404 retain explicit empty, loading or unavailable states.
+
+See `docs/milestones/M05-polish-and-quality.md` for automated results, responsive review details, contrast checks and unverified areas. No Lighthouse score is claimed.
 
 ## Project data
 

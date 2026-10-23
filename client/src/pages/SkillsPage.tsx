@@ -7,7 +7,10 @@ import { primaryPortfolioStack, skillGroups } from '../data/portfolio';
 export function SkillsPage() {
   return (
     <>
-      <PageMeta title="Skills" />
+      <PageMeta
+        description="Review Egbedayo Olanrewaju's frontend, backend, database, testing and development toolkit."
+        title="Skills"
+      />
       <PageIntro
         description="A practical toolkit spanning interactive frontends, backend services and data foundations."
         eyebrow="Skills"

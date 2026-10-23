@@ -8,7 +8,10 @@ import { ContactForm } from '../features/contact/ContactForm';
 export function ContactPage() {
   return (
     <>
-      <PageMeta title="Contact" />
+      <PageMeta
+        description="Contact Egbedayo Olanrewaju about full-stack web development, frontend, API, database or maintenance work."
+        title="Contact"
+      />
       <PageIntro
         description="Share the idea, challenge or website support you need. Direct contact links are available below."
         eyebrow="Contact"
@@ -26,7 +29,12 @@ export function ContactPage() {
               {contactLinks.map((link) => (
                 <li key={link.label}>
                   <span>{link.label}</span>
-                  <a href={link.href} rel={link.href.startsWith('http') ? 'noreferrer' : undefined} target={link.href.startsWith('http') ? '_blank' : undefined}>{link.value}</a>
+                  <a href={link.href} rel={link.href.startsWith('http') ? 'noreferrer' : undefined} target={link.href.startsWith('http') ? '_blank' : undefined}>
+                    {link.value}
+                    {link.href.startsWith('http') ? (
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    ) : null}
+                  </a>
                 </li>
               ))}
             </ul>

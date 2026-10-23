@@ -15,7 +15,10 @@ import {
 export function HomePage() {
   return (
     <>
-      <PageMeta title="Home" />
+      <PageMeta
+        description="Explore the EOLAN DiGITAL portfolio of full-stack web developer Egbedayo Olanrewaju."
+        title="Home"
+      />
       <section className="home-hero">
         <Container className="home-hero__grid">
           <div className="home-hero__content">
@@ -28,7 +31,7 @@ export function HomePage() {
               <ButtonLink to="/contact" variant="secondary">Start a conversation</ButtonLink>
             </div>
           </div>
-          <ProfilePortrait src={profilePhotoPath} />
+          <ProfilePortrait priority src={profilePhotoPath} />
         </Container>
       </section>
 

@@ -8,7 +8,10 @@ import { services } from '../data/portfolio';
 export function ServicesPage() {
   return (
     <>
-      <PageMeta title="Services" />
+      <PageMeta
+        description="Explore EOLAN DiGITAL services across full-stack development, APIs, databases, e-commerce and website maintenance."
+        title="Services"
+      />
       <PageIntro
         description="Development services for businesses and individuals bringing a digital idea to life."
         eyebrow="Services"

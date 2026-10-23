@@ -123,7 +123,8 @@ At the end of each milestone, report:
 ## Current delivery status
 
 - Milestones 1 and 2 are approved.
-- Milestones 3 and 4 are implemented; Milestone 4 is on `feature/M04-project-showcase` and awaiting review.
+- Milestones 3 and 4 are implemented.
+- Milestone 5 is implemented on `feature/M05-polish-and-quality` and awaiting review.
 - The professional portrait is approved, but its original file still needs to be placed in the repository before it can replace the accessible placeholder.
 - Project names are verified, but their status, scope, responsibilities, stack, challenges, screenshots, repositories and demos remain TBD.
 - Experience history, CV and backend delivery remain TBD as described above.
@@ -186,3 +187,6 @@ Before performing Git operations, inspect the current branch, working tree and r
 - The approved logo is stored unchanged at `client/public/images/eolan-logo.jpeg`, extracted from the branded PRD. Keep its white background intact unless a new official transparent asset is supplied.
 - Shared UI primitives live in `client/src/components/ui/`; the responsive header and footer live in `client/src/components/layout/`.
 - The approved provisional brand colors are blue `#2163EE`, purple `#8030EE`, and teal `#0E958C`; exact logo-derived values remain TBD.
+- Route metadata is managed through `client/src/components/shared/PageMeta.tsx`; unavailable routes must remain `noindex, nofollow`.
+- Route changes focus the main landmark, contact validation focuses the first invalid field, and new-tab links include an assistive announcement.
+- The original logo remains the source asset. Use intrinsic dimensions, decoding/loading priority hints and existing fallbacks instead of replacing or recompressing it without approval.

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import { primaryNavigation } from '../../data/navigation';
 import { BrandLogo } from '../shared/BrandLogo';
 import { Container } from '../ui/Container';
@@ -7,6 +7,21 @@ import { Container } from '../ui/Container';
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const { pathname } = useLocation();
+  const previousPathname = useRef(pathname);
+
+  useEffect(() => {
+    if (previousPathname.current === pathname) {
+      return undefined;
+    }
+
+    previousPathname.current = pathname;
+    const animationFrame = window.requestAnimationFrame(() => {
+      setMenuOpen(false);
+    });
+
+    return () => window.cancelAnimationFrame(animationFrame);
+  }, [pathname]);
 
   useEffect(() => {
     if (!menuOpen) {

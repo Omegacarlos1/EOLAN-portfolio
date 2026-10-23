@@ -1,14 +1,40 @@
+import { useState } from 'react';
+
 export interface ProfilePortraitProps {
+  priority?: boolean;
   src?: string;
 }
 
-export function ProfilePortrait({ src }: ProfilePortraitProps) {
-  if (src) {
+export function ProfilePortrait({
+  priority = false,
+  src,
+}: ProfilePortraitProps) {
+  const [imageResult, setImageResult] = useState<{
+    src: string | undefined;
+    state: 'loaded' | 'error';
+  }>();
+  const imageState =
+    imageResult && imageResult.src === src ? imageResult.state : 'loading';
+
+  if (src && imageState !== 'error') {
     return (
-      <figure className="profile-portrait">
+      <figure
+        aria-busy={imageState === 'loading'}
+        className="profile-portrait profile-portrait--image"
+      >
+        {imageState === 'loading' ? (
+          <span className="profile-portrait__loading" role="status">
+            <span className="sr-only">Loading professional portrait</span>
+          </span>
+        ) : null}
         <img
           alt="Egbedayo Olanrewaju, Full-Stack Web Developer"
           className="profile-portrait__image"
+          decoding="async"
+          fetchPriority={priority ? 'high' : 'auto'}
+          loading={priority ? 'eager' : 'lazy'}
+          onError={() => setImageResult({ src, state: 'error' })}
+          onLoad={() => setImageResult({ src, state: 'loaded' })}
           src={src}
         />
       </figure>
@@ -25,8 +51,12 @@ export function ProfilePortrait({ src }: ProfilePortraitProps) {
         EO
       </span>
       <figcaption>
-        Professional portrait
-        <small>Original file awaiting repository import</small>
+        {imageState === 'error' ? 'Portrait unavailable' : 'Professional portrait'}
+        <small>
+          {imageState === 'error'
+            ? 'Check the configured image path'
+            : 'Original file awaiting repository import'}
+        </small>
       </figcaption>
     </figure>
   );

@@ -7,9 +7,14 @@ import { SectionHeading } from '../components/ui/SectionHeading';
 export function NotFoundPage() {
   return (
     <section className="placeholder-page" aria-labelledby="page-title">
-      <PageMeta title="Page Not Found" />
+      <PageMeta
+        description="The requested EOLAN DiGITAL portfolio page could not be found."
+        noIndex
+        title="Page Not Found"
+      />
       <Container size="narrow">
         <Card className="placeholder-page__card" tone="accent">
+          <p aria-hidden="true" className="not-found__code">404</p>
           <SectionHeading
             description="The page you requested does not exist or may have moved."
             eyebrow="404"
@@ -19,6 +24,8 @@ export function NotFoundPage() {
           />
           <div className="placeholder-page__actions">
             <ButtonLink to="/">Return home</ButtonLink>
+            <ButtonLink to="/projects" variant="secondary">Browse projects</ButtonLink>
+            <ButtonLink to="/contact" variant="ghost">Contact Egbedayo</ButtonLink>
           </div>
         </Card>
       </Container>

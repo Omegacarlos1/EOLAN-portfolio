@@ -95,6 +95,14 @@ describe('application routes', () => {
       'href',
       '/',
     );
+    expect(screen.getByRole('link', { name: 'Browse projects' })).toHaveAttribute(
+      'href',
+      '/projects',
+    );
+    expect(document.querySelector('meta[name="robots"]')).toHaveAttribute(
+      'content',
+      'noindex, nofollow',
+    );
   });
 
   it('navigates with the primary navigation and updates the page title', async () => {
@@ -113,6 +121,15 @@ describe('application routes', () => {
     await waitFor(() => {
       expect(document.title).toBe('About | EOLAN DiGITAL');
     });
+    expect(document.querySelector('meta[name="description"]')).toHaveAttribute(
+      'content',
+      "Learn about Egbedayo Olanrewaju's approach to full-stack web development and practical digital solutions.",
+    );
+    expect(document.querySelector('meta[property="og:title"]')).toHaveAttribute(
+      'content',
+      'About | EOLAN DiGITAL',
+    );
+    expect(screen.getByRole('main')).toHaveFocus();
     expect(
       screen.getByRole('button', { name: 'Open navigation' }),
     ).toHaveAttribute('aria-expanded', 'false');

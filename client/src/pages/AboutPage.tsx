@@ -20,7 +20,10 @@ const approach = [
 export function AboutPage() {
   return (
     <>
-      <PageMeta title="About" />
+      <PageMeta
+        description="Learn about Egbedayo Olanrewaju's approach to full-stack web development and practical digital solutions."
+        title="About"
+      />
       <PageIntro
         description={`${professionalTitle} focused on modern, responsive and useful web products.`}
         eyebrow="About"
@@ -61,7 +64,12 @@ export function AboutPage() {
               {contactLinks.map((link) => (
                 <li key={link.label}>
                   <span>{link.label}</span>
-                  <a href={link.href} rel={link.href.startsWith('http') ? 'noreferrer' : undefined} target={link.href.startsWith('http') ? '_blank' : undefined}>{link.value}</a>
+                  <a href={link.href} rel={link.href.startsWith('http') ? 'noreferrer' : undefined} target={link.href.startsWith('http') ? '_blank' : undefined}>
+                    {link.value}
+                    {link.href.startsWith('http') ? (
+                      <span className="sr-only"> (opens in a new tab)</span>
+                    ) : null}
+                  </a>
                 </li>
               ))}
             </ul>

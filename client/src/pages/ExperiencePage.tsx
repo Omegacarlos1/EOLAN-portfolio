@@ -7,7 +7,10 @@ import { Container } from '../components/ui/Container';
 export function ExperiencePage() {
   return (
     <>
-      <PageMeta title="Experience" />
+      <PageMeta
+        description="Verified experience information for Egbedayo Olanrewaju will be published when supporting details are confirmed."
+        title="Experience"
+      />
       <PageIntro
         description="A factual professional timeline will be published once the supporting details are confirmed."
         eyebrow="Experience"

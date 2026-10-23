@@ -23,6 +23,7 @@
     var(--color-purple) 54%,
     var(--color-teal)
   );
+  --gradient-action: linear-gradient(120deg, #174fc9, #6924cf 54%, #08766f);
   --gradient-surface: linear-gradient(
     145deg,
     rgb(33 99 238 / 13%),
